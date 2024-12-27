@@ -53,17 +53,24 @@ export function sortbylived() {
 
 // 6. Sort the people alphabetically by last name
 export function sortByLastName() {
-    return [...people].sort((a, b) => {
-        const [aLast] = a.split(', ');
-        const [bLast] = b.split(', ');
-        return aLast.localeCompare(bLast);
-    });
+    return [...people].sort((lastOne, nextOne) => {
+		const [aLast, aFirst] = lastOne.split(', ');
+		const [bLast, bFirst] = nextOne.split(', ');
+		return aLast > bLast ? 1 : -1; 
+	});
 }
 
 // 7. Reduce Exercise - Sum up the instances of each item in the array
 export function reducedSum(data) {
-    return data.reduce((acc, item) => {
-        acc[item] = (acc[item] || 0) + 1;
-        return acc;
-    }, {});
+    if (!Array.isArray(data)) {
+        throw new TypeError('Input must be an array');
+    }
+    return data.reduce(function (obj, item) {
+		if (!obj[item]) { 
+			obj[item] = 0; 
+		} 
+		obj[item]++; 
+		return obj; 
+	}, {}); 
 }
+
