@@ -61,14 +61,15 @@ export function sortByLastName() {
 }
 
 // 7. Reduce Exercise - Sum up the instances of each item in the array
-export function reducedSum(data) {
+function reducedSum(data) {
     return data.reduce(function (obj, item) {
         if (!obj[item]) { 
-            obj[item] = 0; 
+            obj[item] = 1; 
         } 
-        obj[item]++; 
+        else {
+          obj[item]++; 
+        }
         return obj; 
-    }, {}); 
+    }, {});
 }
-
 
