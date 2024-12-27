@@ -60,8 +60,10 @@ export function sortByLastName() {
 	});
 }
 
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
+
 // 7. Reduce Exercise - Sum up the instances of each item in the array
-export function reducedSum(data) {
+export function reducedSum() {
     return data.reduce(function (obj, item) {
         if (!obj[item]) { 
             obj[item] = 1; 
