@@ -62,12 +62,16 @@ export function sortByLastName() {
 
 // 7. Reduce Exercise - Sum up the instances of each item in the array
 export function reducedSum(data) {
+    if (!Array.isArray(data)) {
+        throw new TypeError('Input must be an array');
+    }
     return data.reduce(function (obj, item) {
-		if (!obj[item]) { 
-			obj[item] = 0; 
-		} 
-		obj[item]++; 
-		return obj; 
-	}, {}); 
+        if (!obj[item]) { 
+            obj[item] = 0; 
+        } 
+        obj[item]++; 
+        return obj; 
+    }, {}); 
 }
+
 
