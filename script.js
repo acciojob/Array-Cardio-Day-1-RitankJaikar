@@ -53,15 +53,15 @@ export function sortbylived() {
 
 // 6. Sort the people alphabetically by last name
 export function sortByLastName() {
-    return people.sort((a, b) => {
+    return [...people].sort((a, b) => {
         const [aLast] = a.split(', ');
         const [bLast] = b.split(', ');
         return aLast.localeCompare(bLast);
     });
 }
 
-// 7. Reduce Exercise - Sum up the instances of each of these
-export function reducedSum() {
+// 7. Reduce Exercise - Sum up the instances of each item in the array
+export function reducedSum(data) {
     return data.reduce((acc, item) => {
         acc[item] = (acc[item] || 0) + 1;
         return acc;
